@@ -1,0 +1,58 @@
+@use "../util" as u;
+@use "../globals/colors" as c;
+@use "sass:map";
+
+.grid {
+    max-width: u.rem(1100);
+    margin: auto;
+    padding: 0 u.rem(20);
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+    gap: 0 u.rem(20);
+
+    @include u.breakpoint("large") {
+        max-height: u.rem(500);
+    }
+
+    @include u.breakpoint-down("small") {
+        grid-template-columns: 1fr;
+        gap: u.rem(20) u.rem(20);
+    }
+
+    &__left-bar {
+        background-color: c.$soft-primary;
+    }
+
+    &__item-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: u.rem(20);
+        @include u.breakpoint-down("medium") {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        @include u.breakpoint-down("small") {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+    }
+}
+
+.item-theme {
+    $themes: "work", "play", "study", "exercise", "social", "selfcare";
+    @each $theme in $themes {
+        &.#{$theme} {
+            background-color: map.get(c.$header-themes, #{$theme});
+        }
+    }
+}
+
+.bordered {
+    border-radius: u.rem(20);
+    &-sm{
+        border-radius: u.rem(15);
+    }
+}

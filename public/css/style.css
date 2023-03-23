@@ -1,0 +1,254 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(226deg, 43%, 10%);
+  color: white;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap-reverse;
+}
+
+h1 {
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h3 {
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h4 {
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h5 {
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h6 {
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+.font-sm {
+  font-size: clamp(0.75rem, 0.625rem + 0.5vw, 1.125rem);
+}
+
+.font-md {
+  font-size: clamp(1rem, 0.75rem + 0.5vw, 1.375rem);
+}
+
+.font-xl {
+  font-size: clamp(2rem, 1rem + 2vw, 3rem);
+}
+
+.grid {
+  max-width: 68.75rem;
+  margin: auto;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 0 1.25rem;
+}
+@media (min-width: 56.25em) {
+  .grid {
+    max-height: 31.25rem;
+  }
+}
+@media (max-width: 43.74875em) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem 1.25rem;
+  }
+}
+.grid__left-bar {
+  background-color: hsl(235deg, 46%, 20%);
+}
+.grid__item-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.25rem;
+}
+@media (max-width: 56.24875em) {
+  .grid__item-list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 43.74875em) {
+  .grid__item-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.item-theme.work {
+  background-color: hsl(15deg, 100%, 70%);
+}
+.item-theme.play {
+  background-color: hsl(195deg, 74%, 62%);
+}
+.item-theme.study {
+  background-color: hsl(348deg, 100%, 68%);
+}
+.item-theme.exercise {
+  background-color: hsl(145deg, 58%, 55%);
+}
+.item-theme.social {
+  background-color: hsl(264deg, 64%, 52%);
+}
+.item-theme.selfcare {
+  background-color: hsl(43deg, 84%, 65%);
+}
+
+.bordered {
+  border-radius: 1.25rem;
+}
+.bordered-sm {
+  border-radius: 0.9375rem;
+}
+
+.left-bar-header {
+  background-color: hsl(235deg, 45%, 61%);
+  padding: 1.875rem;
+}
+.left-bar-header p {
+  color: hsl(236deg, 100%, 87%);
+  margin-top: 15%;
+  margin-bottom: 0.3125rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 40%;
+  height: auto;
+}
+
+.time-button-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 1.125rem 1.875rem;
+}
+.time-button-wrap .radio-text {
+  display: block;
+  text-align: left;
+  background-color: transparent;
+  border: transparent;
+  color: hsl(236deg, 100%, 87%);
+  padding: 0.625rem 0;
+}
+.time-button-wrap .radio-text:hover {
+  color: hsl(235deg, 85%, 92%);
+}
+.time-button-wrap .radio-text input {
+  display: none;
+}
+.time-button-wrap .radio-text input:checked + span {
+  color: white;
+  font-weight: 700;
+}
+
+.item-theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.item__header {
+  position: relative;
+  height: 3.125rem;
+  width: 100%;
+  overflow: hidden;
+}
+.item__header > img {
+  position: absolute;
+  top: 0;
+  right: 0.625rem;
+  transform: translateY(-10%);
+}
+
+.item__footer {
+  background-color: hsl(235deg, 46%, 20%);
+  padding: 1.25rem 1.875rem;
+}
+.item__footer:hover {
+  background-color: #292f70;
+}
+.item__footer .current-hours {
+  padding-top: 1.875rem;
+}
+.item__footer button {
+  display: flex;
+  align-items: center;
+}
+.item__footer button:hover img {
+  filter: brightness(150%);
+}
+.item__footer .previous-hours {
+  margin-top: 0.625rem;
+  color: hsl(236deg, 100%, 87%);
+}
+
+.item__lead {
+  display: flex;
+  justify-content: space-between;
+}
+.item__lead button {
+  background-color: transparent;
+  border: none;
+}
+.item__lead h2 {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=style.css.map */

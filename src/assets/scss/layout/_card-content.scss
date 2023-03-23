@@ -1,0 +1,96 @@
+@use "../globals/colors" as c;
+@use "../util" as u;
+
+.left-bar-header {
+  background-color: c.$desaturated-blue;
+  padding: u.rem(30);
+  p {
+    color: c.$pale-blue;
+    margin-top: 15%;
+    margin-bottom: u.rem(5);
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 40%;
+  height: auto;
+}
+
+.time-button-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: u.rem(18) u.rem(30);
+  .radio-text {
+    display: block;
+    text-align: left;
+    background-color: transparent;
+    border: transparent;
+    color: c.$pale-blue;
+    padding: u.rem(10) 0;
+    &:hover {
+      color: c.$white-blue
+    }
+    input {
+      display: none;
+    }
+    input:checked + span{
+      color: white;
+      font-weight: 700;
+    }
+  }
+}
+
+.item-theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.item__header {
+  position: relative;
+  height: u.rem(50);
+  width: 100%;
+  overflow: hidden;
+  >img {
+    position: absolute;
+    top: 0;
+    right: u.rem(10);
+    transform: translateY(-10%);
+  }
+}
+
+.item__footer {
+  background-color: c.$soft-primary;
+  padding: u.rem(20) u.rem(30);
+  &:hover {
+    background-color: lighten(c.$soft-primary, 10%);
+  }
+  .current-hours {
+    padding-top: u.rem(30);
+  }
+  button {
+    display: flex;
+    align-items: center;
+    &:hover img {
+      filter: brightness(150%);
+    }
+  }
+  .previous-hours {
+    margin-top: u.rem(10);
+    color: c.$pale-blue;
+  }
+}
+
+.item__lead {
+  display: flex;
+  justify-content: space-between;
+  button {
+    background-color: transparent;
+    border: none;
+  }
+  h2 {
+    font-weight: 700;
+  }
+}
